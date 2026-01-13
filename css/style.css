@@ -610,160 +610,99 @@ a.footer-link{
   --service-title:#9E9E9E;
  
 }
+/* =========================================
+   PASTE THIS AT THE VERY BOTTOM OF STYLE.CSS
+   (Replacing the previous media query)
+   ========================================= */
 
-
-
-@media screen and (max-width: 992px) {
+@media (max-width: 768px) {
     
+    /* --- GLOBAL FIXES --- */
+    body {
+        overflow-x: hidden; /* Stop horizontal scrolling */
+    }
+
+    /* --- 1. HERO SECTION FIXES --- */
     .hero-container {
-        margin-left: 0; 
-        padding: 20px; 
+        margin-left: 0 !important;
+        padding: 0 20px !important;
+        width: 100% !important;
     }
-
+    .hero-title, .hero-description {
+        width: 100% !important;
+        font-size: 28px !important;
+    }
     .hero-header {
-        flex-direction: column; 
-        gap: 20px;
-    }
-
-    .navbar {
-        width: 100%;
         flex-direction: column;
+        align-items: flex-start;
         gap: 20px;
     }
-
-    ul.nav-links {
-        flex-direction: column; 
-        gap: 15px;
-    }
-
-    
-    .hero-content {
-        margin-top: 50px; 
-        text-align: center;
-    }
-
-    .hero-title {
-        width: 100%; 
-        font-size: 28px;
-        justify-content: center;
-    }
-
-    .hero-description {
-        width: 100%;
-        margin: 0 auto;
-    }
-
     .hero-buttons {
-        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .book-now, .explore-more {
+        width: 100%;
+    }
+    .nav-links {
+        display: none; /* Hide menu links on mobile for now */
+    }
+
+    /* --- 2. HISTORY / ABOUT US FIXES (The "Zoom Out" Culprit) --- */
+    .aboutus-container {
+        padding: 50px 20px !important; /* Reduce huge padding */
     }
     
-    .hero-section {
-        height: auto; 
-        min-height: 100vh;
-    }
-
-   
-    .aboutus-container {
-        padding: 40px 20px;
-    }
-
     .history-container {
-        flex-direction: column; 
-        gap: 40px;
-        margin: 40px 0;
+        flex-direction: column; /* Stack image on top of text */
+        gap: 30px !important;   /* Reduce the 117px gap */
+        margin: 40px 0 !important;
     }
 
     .history-description {
-        width: 100%;
+        width: 100% !important; /* Kill the 500px fixed width */
     }
 
     .aboutus-image {
-        width: 100%; 
-        height: auto;
+        width: 100% !important; /* Kill the 492px fixed width */
+        height: auto !important; /* Maintain aspect ratio */
     }
 
-    
+    /* --- 3. STATS SECTION FIXES --- */
     .stats-container {
-        height: auto;
-        flex-wrap: wrap; 
+        height: auto !important; /* Allow it to grow taller */
+        flex-wrap: wrap;         /* Allow items to drop to next line */
+        gap: 20px;
         padding: 20px 0;
     }
-
     .stat-item {
-        width: 50%; 
-        margin-bottom: 20px;
+        width: 50%; /* 2 items per row */
     }
 
-   
-    .room-container {
-        padding: 40px 20px;
+    /* --- 4. ROOMS & SERVICES CARDS FIXES --- */
+    .room-container, .services-container, .testimonials-container {
+        padding: 50px 20px !important;
     }
 
-    .room-cards {
-        flex-direction: column;
+    .room-cards, .cards, .testimonials-content {
+        flex-direction: column; /* Stack cards vertically */
         align-items: center;
     }
 
-    .room-card {
-        width: 100%;
-    }
-    
     .room-card img {
-        width: 100%; 
+        width: 100% !important; /* Ensure room images fit */
         height: auto;
     }
-
-
-    .services-container {
-        padding: 40px 20px;
-    }
-
+    
     .services-card {
-        width: 100%; 
+        width: 100% !important; /* Cards fill the mobile screen */
     }
 
-    .testimonials-container {
-        padding: 40px 20px;
-    }
-
-    .testimonials-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    /* Fix Footer */
+    /* --- 5. FOOTER FIXES --- */
     .footer-container {
-        flex-direction: column; 
-        padding: 40px 20px;
+        flex-direction: column;
+        padding: 40px 20px !important;
         gap: 40px;
     }
-
-    .footer-left, .footer-right {
-        width: 100%;
-        align-items: center; 
-        text-align: center;
-    }
-
-    ul.footer-links-item {
-        align-items: center;
-    }
-    
-    ul.footer-links {
-        align-items: center;
-    }
 }
 
-
-@media screen and (max-width: 480px) {
-    .stat-item {
-        width: 100%;
-    }
-    
-    .hero-title {
-        font-size: 24px;
-    }
-    
-    .stat-number {
-        font-size: 32px;
-    }
-}
