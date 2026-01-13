@@ -610,99 +610,160 @@ a.footer-link{
   --service-title:#9E9E9E;
  
 }
-/* =========================================
-   PASTE THIS AT THE VERY BOTTOM OF STYLE.CSS
-   (Replacing the previous media query)
-   ========================================= */
 
-@media (max-width: 768px) {
+
+
+@media screen and (max-width: 992px) {
     
-    /* --- GLOBAL FIXES --- */
-    body {
-        overflow-x: hidden; /* Stop horizontal scrolling */
+    .hero-container {
+        margin-left: 0; 
+        padding: 20px; 
     }
 
-    /* --- 1. HERO SECTION FIXES --- */
-    .hero-container {
-        margin-left: 0 !important;
-        padding: 0 20px !important;
-        width: 100% !important;
-    }
-    .hero-title, .hero-description {
-        width: 100% !important;
-        font-size: 28px !important;
-    }
     .hero-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; 
         gap: 20px;
     }
-    .hero-buttons {
+
+    .navbar {
+        width: 100%;
         flex-direction: column;
-        width: 100%;
-    }
-    .book-now, .explore-more {
-        width: 100%;
-    }
-    .nav-links {
-        display: none; /* Hide menu links on mobile for now */
+        gap: 20px;
     }
 
-    /* --- 2. HISTORY / ABOUT US FIXES (The "Zoom Out" Culprit) --- */
-    .aboutus-container {
-        padding: 50px 20px !important; /* Reduce huge padding */
+    ul.nav-links {
+        flex-direction: column; 
+        gap: 15px;
+    }
+
+    
+    .hero-content {
+        margin-top: 50px; 
+        text-align: center;
+    }
+
+    .hero-title {
+        width: 100%; 
+        font-size: 28px;
+        justify-content: center;
+    }
+
+    .hero-description {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
     }
     
+    .hero-section {
+        height: auto; 
+        min-height: 100vh;
+    }
+
+   
+    .aboutus-container {
+        padding: 40px 20px;
+    }
+
     .history-container {
-        flex-direction: column; /* Stack image on top of text */
-        gap: 30px !important;   /* Reduce the 117px gap */
-        margin: 40px 0 !important;
+        flex-direction: column; 
+        gap: 40px;
+        margin: 40px 0;
     }
 
     .history-description {
-        width: 100% !important; /* Kill the 500px fixed width */
+        width: 100%;
     }
 
     .aboutus-image {
-        width: 100% !important; /* Kill the 492px fixed width */
-        height: auto !important; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto;
     }
 
-    /* --- 3. STATS SECTION FIXES --- */
+    
     .stats-container {
-        height: auto !important; /* Allow it to grow taller */
-        flex-wrap: wrap;         /* Allow items to drop to next line */
-        gap: 20px;
+        height: auto;
+        flex-wrap: wrap; 
         padding: 20px 0;
     }
+
     .stat-item {
-        width: 50%; /* 2 items per row */
+        width: 50%; 
+        margin-bottom: 20px;
     }
 
-    /* --- 4. ROOMS & SERVICES CARDS FIXES --- */
-    .room-container, .services-container, .testimonials-container {
-        padding: 50px 20px !important;
+   
+    .room-container {
+        padding: 40px 20px;
     }
 
-    .room-cards, .cards, .testimonials-content {
-        flex-direction: column; /* Stack cards vertically */
+    .room-cards {
+        flex-direction: column;
         align-items: center;
     }
 
-    .room-card img {
-        width: 100% !important; /* Ensure room images fit */
-        height: auto;
+    .room-card {
+        width: 100%;
     }
     
-    .services-card {
-        width: 100% !important; /* Cards fill the mobile screen */
+    .room-card img {
+        width: 100%; 
+        height: auto;
     }
 
-    /* --- 5. FOOTER FIXES --- */
-    .footer-container {
+
+    .services-container {
+        padding: 40px 20px;
+    }
+
+    .services-card {
+        width: 100%; 
+    }
+
+    .testimonials-container {
+        padding: 40px 20px;
+    }
+
+    .testimonials-content {
         flex-direction: column;
-        padding: 40px 20px !important;
         gap: 40px;
+    }
+
+    /* Fix Footer */
+    .footer-container {
+        flex-direction: column; 
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .footer-left, .footer-right {
+        width: 100%;
+        align-items: center; 
+        text-align: center;
+    }
+
+    ul.footer-links-item {
+        align-items: center;
+    }
+    
+    ul.footer-links {
+        align-items: center;
     }
 }
 
+
+@media screen and (max-width: 480px) {
+    .stat-item {
+        width: 100%;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .stat-number {
+        font-size: 32px;
+    }
+}
